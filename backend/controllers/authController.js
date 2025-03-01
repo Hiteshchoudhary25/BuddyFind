@@ -1,7 +1,7 @@
-const User = require();
+const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
-const {generateOTP , transporter} = require();
+const {generateOTP , transporter} = require('../utils/email');
 
 const authController = {
     signup : async (req ,res) => {
@@ -160,4 +160,6 @@ const authController = {
             res.status(400).json({error:error.message}); 
         }
     }
-}
+};
+
+module.exports = authController;
