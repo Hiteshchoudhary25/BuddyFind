@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const itemController = require();
+const itemController = require('../controllers/itemController');
 const auth = require('../middleware/auth');
-const {upload} = require();
+const {upload} = require('../middleware/upload');
 
 router.post('/', auth, upload.array('images', 5), itemController.createItem);
 router.get('/', itemController.getItems);
