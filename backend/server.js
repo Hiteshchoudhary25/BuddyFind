@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const setupSocket = require('./socket/chat');
 
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
@@ -39,3 +40,5 @@ const server = app.listen(PORT, () => {
 
 //connect to MongoDB
 connectDB();
+// Initialize Socket.io
+const io = setupSocket(server);
